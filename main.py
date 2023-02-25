@@ -19,7 +19,11 @@ Config.set('graphics', 'resizable', False)
 #     pass
 
 class PetScreen(Screen):
-    pass
+    def backPress(self):
+        self.ids.backButton_image.source = 'assets/back_pressed.png'
+
+    def backOff(self):
+        self.ids.backButton_image.source = 'assets/back.png'
 
 class WindowManager(ScreenManager):
     pass
@@ -88,6 +92,7 @@ class Plant(Screen):
 
     def petOff(self):
         self.ids.petButton_image.source = 'assets/pets.png'
+    
         
 kv = Builder.load_file('Main.kv')
 

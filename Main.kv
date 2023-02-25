@@ -24,7 +24,7 @@ WindowManager:
     Button:
         id: water_button
         size_hint: .15, .12
-        pos: 135,50
+        pos: 155,50
         background_color: 0,0,0,0
         
         on_press: root.press()
@@ -36,10 +36,7 @@ WindowManager:
             center_x: self.parent.center_x
             center_y: self.parent.center_y
             
-    Label:
-        text: root.text
-        color: (0,0,0,1)
-        pos: -90, 270
+    
 
     Image:
         id: harvest_image
@@ -47,11 +44,16 @@ WindowManager:
         pos: 30, 500
         size_hint: .3, .3
 
+    Label:
+        text: root.text
+        color: (0,0,0,1)
+        pos: -77, 275
+
     
     Button:
         id: pet_button
         size_hint: .15, .12
-        pos: 250,50
+        pos: 270,50
         background_color: 0,0,0,0
 
         on_press: root.petPress()
@@ -74,3 +76,20 @@ WindowManager:
             size: self.size
             pos: self.pos
             source: 'assets/petsroom.jpeg'
+
+    Button:
+        id: back_button
+        size_hint: .15, .12
+        pos: 60,50
+        background_color: 0,0,0,0
+
+        on_press: root.backPress()
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
+            root.backOff()
+        Image:
+            id: backButton_image
+            source: 'assets/back.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
