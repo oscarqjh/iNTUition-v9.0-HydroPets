@@ -73,7 +73,9 @@ The team comprises of 4 talented undergraduates of Team Nexus by the name of
 4. Lim Yong Kang
 
 ## Credits:
-- Background used: https://dribbble.com/shots/17040069-Arch?utm_source=Clipboard_Shot&utm_campaign=joannan&utm_content=Arch&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=joannan&utm_content=Arch&utm_medium=Social_Share
+- Front screen background: https://dribbble.com/shots/17040069-Arch?utm_source=Clipboard_Shot&utm_campaign=joannan&utm_content=Arch&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=joannan&utm_content=Arch&utm_medium=Social_Share
+
+- Second screen background: https://dribbble.com/shots/15000307-Sanctuary
 
 - Plant sprites used: Stardew Valley, 2016, Eric "ConcernedApe" Barone
 
