@@ -15,9 +15,6 @@ from kivy.properties import (
 Window.size = (360, 640)
 Config.set('graphics', 'resizable', False)
 
-# class MainPage(Screen):
-#     pass
-
 class PetScreen(Screen):
     def backPress(self):
         self.ids.backButton_image.source = 'assets/back_pressed.png'
@@ -27,9 +24,6 @@ class PetScreen(Screen):
 
 class WindowManager(ScreenManager):
     pass
-
-# class AppWidget(Widget):
-#     pass
 
 class Plant(Screen):
     growth = 0
@@ -72,7 +66,6 @@ class Plant(Screen):
             self.growth = -1
             self.stage = 0  
             self.harvestCounter()
-            print(self.harvest_count) 
         else:
             self.ids.image.source = 'assets/newHydrate_pressed.png'
         self.change_image()
@@ -99,7 +92,6 @@ kv = Builder.load_file('Main.kv')
 class MainApp(App):
     def build(self):
         return kv
-
 
 if __name__ == '__main__':
     app = MainApp()
