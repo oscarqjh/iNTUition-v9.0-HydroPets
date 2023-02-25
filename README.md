@@ -67,7 +67,7 @@ Download all files in this github repository and paste it into the **kivy_venv**
 
 ## Team
 The team comprises of 4 talented undergraduates of Team Nexus by the name of
-1. Qian Jian Heng Oscar
+1. Qian Jianheng Oscar
 2. Tristan Tan Jin Hau
 3. Lee Ruo Chen
 4. Lim Yong Kang
