@@ -1,0 +1,67 @@
+#:kivy 2.1.0
+
+<AppWidget>:
+    canvas:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'assets/room.webp'
+
+    Plant:
+        center: self.parent.center
+
+        
+
+<Plant>:
+    image: image_widget
+    button: water_button
+    growth: 0
+    Image:
+        id: image_widget
+        source: 'assets/stage1.webp'
+        pos: 143,118
+
+    Button:
+        id: water_button
+        size_hint: .15, .12
+        pos: 135,50
+        background_color: 0,0,0,0
+        
+        on_press: root.press()
+        on_release: root.off()
+
+        Image:
+            id: image
+            source: 'assets/newHydrate.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            
+    Button:
+        id: pet_button
+        size_hint: .15, .12
+        pos: 250,50
+        background_color: 0,0,0,0
+
+        on_press: root.petPress()
+        on_release: root.petOff()
+
+        Image:
+            id: petButton_image
+            source: 'assets/pets.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Image:
+        id: harvest_image
+        source: 'assets/pill.png'
+        pos: 0, 550
+        background_color: 0,0,0,0
+
+            
+    Label:
+        text: root.text
+        color: (0,0,0,1)
+        pos: 18, 549
+
+    
+
