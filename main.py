@@ -15,11 +15,19 @@ from kivy.properties import (
 Window.size = (360, 640)
 Config.set('graphics', 'resizable', False)
 
-class AppWidget(Widget):
+# class MainPage(Screen):
+#     pass
 
+class PetScreen(Screen):
     pass
 
-class Plant(Widget):
+class WindowManager(ScreenManager):
+    pass
+
+# class AppWidget(Widget):
+#     pass
+
+class Plant(Screen):
     growth = 0
     stage = 0
     text = StringProperty("0")
@@ -54,7 +62,6 @@ class Plant(Widget):
         if self.stage == 3:
             self.ids.image.source = 'assets/newHarvest.png'
             
-
     def press(self):
         if self.stage == 2:
             self.ids.image.source = 'assets/newHarvest_pressed.png'
@@ -62,18 +69,13 @@ class Plant(Widget):
             self.stage = 0  
             self.harvestCounter()
             print(self.harvest_count) 
-            
         else:
             self.ids.image.source = 'assets/newHydrate_pressed.png'
         self.change_image()
 
-        
-
     def off(self):
         if self.stage == 2:
             self.ids.image.source = 'assets/newHarvest.png' 
-            
-                   
         else:
             self.ids.image.source = 'assets/newHydrate.png'
     
@@ -86,15 +88,12 @@ class Plant(Widget):
 
     def petOff(self):
         self.ids.petButton_image.source = 'assets/pets.png'
-            
-
-Builder.load_file('Main.kv')
+        
+kv = Builder.load_file('Main.kv')
 
 class MainApp(App):
-
     def build(self):
-        app = AppWidget()
-        return app
+        return kv
 
 
 if __name__ == '__main__':
