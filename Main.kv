@@ -1,25 +1,25 @@
 #:kivy 2.1.0
 
-<AppWidget>:
+WindowManager:
+    Plant:
+    PetScreen:
+
+<Plant>:
+    name: "main"
+    image: image_widget
+    button: water_button
+    growth: 0
+
     canvas:
         Rectangle:
             size: self.size
             pos: self.pos
             source: 'assets/room.webp'
 
-    Plant:
-        center: self.parent.center
-
-        
-
-<Plant>:
-    image: image_widget
-    button: water_button
-    growth: 0
     Image:
         id: image_widget
         source: 'assets/stage1.webp'
-        pos: 143,118
+        pos: 10, -130
 
     Button:
         id: water_button
@@ -36,6 +36,18 @@
             center_x: self.parent.center_x
             center_y: self.parent.center_y
             
+    Label:
+        text: root.text
+        color: (0,0,0,1)
+        pos: -90, 270
+
+    Image:
+        id: harvest_image
+        source: 'assets/pill.png'
+        pos: 30, 500
+        size_hint: .3, .3
+
+    
     Button:
         id: pet_button
         size_hint: .15, .12
@@ -43,7 +55,10 @@
         background_color: 0,0,0,0
 
         on_press: root.petPress()
-        on_release: root.petOff()
+        on_release: 
+            root.petOff()
+            app.root.current = "petscreen"
+            root.manager.transition.direction = "left"
 
         Image:
             id: petButton_image
@@ -51,17 +66,11 @@
             center_x: self.parent.center_x
             center_y: self.parent.center_y
 
-    Image:
-        id: harvest_image
-        source: 'assets/pill.png'
-        pos: 0, 550
-        background_color: 0,0,0,0
-
-            
-    Label:
-        text: root.text
-        color: (0,0,0,1)
-        pos: 18, 549
-
     
-
+<PetScreen>:
+    name: "petscreen"
+    canvas:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'assets/petsroom.jpeg'
