@@ -6,13 +6,13 @@
 ![](https://drive.google.com/uc?export=view&id=1tq5FBuRMhtD-nKDf3kHt7M9P-O4cWpQb)
 
 ## Features
-- Stay hydrated while growing your hydropets!
+- Stay hydrated while growing your HydroPets!
 - Simple and easy to use
 - Push notifications every hour to remind user to drink water
 - After drinking water, user can water a virtual plant
-- Virtual plant will grow after being watered a specific number of times
+- The virtual plant will grow after being watered a specific number of times
 - When fully grown, the virtual plant can be harvested
-- There is a random chance virtual pet is spawned, and they can be collected and fed by the user
+- There is a random chance that a virtual pet is spawned, and they can be collected and fed by the user
 
 ## Showcase
 ![](https://drive.google.com/uc?export=view&id=1P0EMssZirBg8eVe1FibgXZjsz6i0moTI)
