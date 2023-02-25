@@ -6,13 +6,13 @@
 ![](https://drive.google.com/uc?export=view&id=1tq5FBuRMhtD-nKDf3kHt7M9P-O4cWpQb)
 
 ## Features
-- stay hydrated while growing your hydropets
-- simple and easy to use
-- push notification every hour for user to drink water
-- after drinking water, user can enter the app to water a virtual plant
-- virtual plant will grow after being watered a specific number of times
-- When fully grown, the virtual plant will bear a fruit that can be opened
-- When fruit is opened, a small virtual pet is spawned, and can be collected by the user
+- Stay hydrated while growing your hydropets!
+- Simple and easy to use
+- Push notifications every hour to remind user to drink water
+- After drinking water, user can water a virtual plant
+- Virtual plant will grow after being watered a specific number of times
+- When fully grown, the virtual plant can be harvested
+- There is a random chance virtual pet is spawned, and they can be collected and fed by the user
 
 ## Showcase
 ![](https://drive.google.com/uc?export=view&id=1P0EMssZirBg8eVe1FibgXZjsz6i0moTI)
@@ -22,7 +22,7 @@
 
 
 ## Development
-The app was carefully and skillfully engineered by our team. We drew inspiration from our gaming experiences and the common issue of not drinking sufficient water among individuals who lead hectic lifestyles like us.
+The app was carefully and skillfully engineered by our team. We drew inspiration from our gaming experiences and the common issue of not drinking sufficient water among individuals who lead hectic lifestyles, like us.
 
 Hopefully, with a simple app like this it could help individuals avoid the discomfort and medical expenditure arising from aforementioned ailments that dehydration - however mild - entails. 
 
@@ -67,9 +67,9 @@ Download all files in this github repository and paste it into the **kivy_venv**
 
 ## Team
 The team comprises of 4 talented undergraduates of Team Nexus by the name of
-1. Qian Jianheng Oscar
-2. Tristan Tan Jinhao
-3. Lee Ruochen
+1. Qian Jian Heng Oscar
+2. Tristan Tan Jin Hau
+3. Lee Ruo Chen
 4. Lim Yong Kang
 
 ## Credits:
