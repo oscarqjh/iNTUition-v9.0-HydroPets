@@ -71,6 +71,7 @@ The team comprises of 4 talented undergraduates of Team Nexus by the name of
 2. Tristan Tan Jin Hau
 3. Lee Ruo Chen
 4. Lim Yong Kang
+[GitHub Contributors Image](https://contrib.rocks/image?repo=oscarqjh/iNTUition-v9.0-Nexus)
 
 ## Credits:
 - Front screen background: https://dribbble.com/shots/17040069-Arch?utm_source=Clipboard_Shot&utm_campaign=joannan&utm_content=Arch&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=joannan&utm_content=Arch&utm_medium=Social_Share
