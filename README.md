@@ -81,7 +81,4 @@ The team comprises of 4 talented undergraduates of Team Nexus by the name of
 
 - Button art: https://www.flaticon.com/free-icon/rectangle_5853969?term=rectangle&page=1&position=7&origin=tag&related_id=5853969
 
-## License
-
-MIT
 
