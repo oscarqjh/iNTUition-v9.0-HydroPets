@@ -63,7 +63,7 @@ python -m pip install "kivy[base]" kivy_examples
 ```
 
 ### Merge with github code
-Download all files in this github repository and paste it into the **kivy_venv** file.
+Download all files in this github repository and paste it into the **kivy_venv** folder.
 
 ## Team
 The team comprises of 4 talented undergraduates of Team Nexus by the name of
