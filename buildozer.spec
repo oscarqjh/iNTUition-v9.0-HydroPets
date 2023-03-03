@@ -13,7 +13,7 @@ package.domain = org.nexus
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,txt,atlas,jpeg,webp
+source.include_exts = py,png,jpg,kv,txt,atlas,jpeg,webp,gif
 
 # (list) List of inclusions using pattern matching
 source.include_patterns = assets/*
