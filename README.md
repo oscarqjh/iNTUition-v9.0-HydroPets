@@ -82,5 +82,5 @@ The team comprises of 4 talented undergraduates of Team Nexus by the name of
 - Button art: https://www.flaticon.com/free-icon/rectangle_5853969?term=rectangle&page=1&position=7&origin=tag&related_id=5853969
 
 ## iNTUition-v9.0
-This project is submitted to Devpost for the annual flagship hackathon of NTU IEEE Student Branch
+This project is submitted to Devpost for the annual flagship hackathon of NTU IEEE Student Branch   
 link - https://devpost.com/software/hydropets
