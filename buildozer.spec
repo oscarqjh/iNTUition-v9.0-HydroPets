@@ -16,7 +16,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,txt,atlas,jpeg,webp,gif,json
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*
+source.include_patterns = assets/*.png, assets/*.json, assets/*.jpeg, assets/*.webp, assets/*.gif
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
@@ -44,7 +44,7 @@ requirements = python3,kivy==2.1.0,kivymd==0.104.2,pillow==8.3.1
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-# presplash.filename = %(source.dir)s/assets/NexusPresplash.gif
+presplash.filename = %(source.dir)s/assets/NexusLogo.png
 
 # (str) Icon of the application
 icon.filename = %(source.dir)s/assets/NexusLogo.png
@@ -86,7 +86,7 @@ android.presplash_color = black
 # see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
 # for general documentation.
 # Lottie files can be created using various tools, like Adobe After Effect or Synfig.
-android.presplash_lottie = "assets/NexusPresplash.json"
+# android.presplash_lottie = "assets/NexusPresplash.json"
 
 # (str) Adaptive icon of the application (used if Android API level is 26+ at runtime)
 #icon.adaptive_foreground.filename = %(source.dir)s/data/icon_fg.png
