@@ -1,92 +1,125 @@
 #:kivy 2.1.0
 
 WindowManager:
-    Plant:
+    id: screen_manager
+
+    PlantScreen:
+        id: plant_screen
     PetScreen:
+        id: pet_screen
 
-<Plant>:
+<PlantScreen>:
     name: "main"
-    image: image_widget
-    button: water_button
     growth: 0
-
-    canvas:
-        Rectangle:
-            size: self.size
-            pos: self.pos
-            source: 'assets/room.webp'
-
-    Image:
-        id: image_widget
-        source: 'assets/stage1.webp'
-        pos: 10, -130
-
-    Button:
-        id: water_button
-        size_hint: .15, .12
-        pos: 155,50
-        background_color: 0,0,0,0
-        
-        on_press: root.press()
-        on_release: root.off()
-
-        Image:
-            id: image
-            source: 'assets/newHydrate.png'
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y
-            
-    Image:
-        id: harvest_image
-        source: 'assets/pill.png'
-        pos: 30, 500
-        size_hint: .3, .3
-
-    Label:
-        text: root.text
-        color: (0,0,0,1)
-        pos: -77, 275
-
+    FloatLayout:
+        PlantRoomBackground:
+            id: plantroom_background
+            source: 'assets/plantroom.webp'
+            allow_stretch: True
+            size: self.parent.size
+            offset: [self.center_x - (self.norm_image_size[0]/2), self.center_y - (self.norm_image_size[1]/2)]
+            magnification: self.norm_image_size[0] / self.texture_size[0]
+            Bounds:
+                pos: self.parent.offset
+                size: self.parent.norm_image_size
     
-    Button:
-        id: pet_button
-        size_hint: .15, .12
-        pos: 270,50
-        background_color: 0,0,0,0
-
-        on_press: root.petPress()
-        on_release: 
-            root.petOff()
-            app.root.current = "petscreen"
-            root.manager.transition.direction = "left"
+        # canvas:
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: 'assets/plantroom.webp'
 
         Image:
-            id: petButton_image
-            source: 'assets/pets.png'
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y
+            id: plant_image
+            source: 'assets/stage1.webp'
+            pos: root.x + 12, root.y - 135
+
+        Button:
+            id: water_button
+            size_hint: .15, .12
+            pos_hint: {'x':.4, 'y':.08}
+            background_color: 0,0,0,0
+            
+            on_press: root.press()
+            on_release: root.off()
+
+            Image:
+                id: hydrate_button
+                source: 'assets/newHydrate.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+        
+        Image:
+            id: harvest_image
+            source: 'assets/pill.png'
+            pos_hint: {'x':.07, 'y':.75}
+            size_hint: .3, .3
+
+
+        Label:
+            text: root.text
+            color: (0,0,0,1)
+            pos_hint: {'x':.28, 'y':.749}
+            size_hint: .3, .3
+            text_size: self.width, None
+            font_size: self.width * .18
+        
+        Button:
+            id: pet_button
+            size_hint: .15, .12
+            pos_hint: {'x':.75, 'y':.08}
+            background_color: 0,0,0,0
+
+            on_press: root.petPress()
+            on_release: 
+                root.petOff()
+                app.root.current = "petscreen"
+                root.manager.transition.direction = "left"
+
+            Image:
+                id: petButton_image
+                size_hint: .3,.3
+                source: 'assets/pets.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
 
 <PetScreen>:
     name: "petscreen"
-    canvas:
-        Rectangle:
-            size: self.size
-            pos: self.pos
-            source: 'assets/petsroom.jpeg'
+    FloatLayout:
+        Background:
+            id: petroom_background
+            source: 'assets/petsroomnew.jpeg'
+            allow_stretch: True
+            size: self.parent.size
+            offset: [self.center_x - (self.norm_image_size[0]/2), self.center_y - (self.norm_image_size[1]/2)]
+            magnification: self.norm_image_size[0] / self.texture_size[0]
+            Bounds:
+                pos: self.parent.offset
+                size: self.parent.norm_image_size
 
-    Button:
-        id: back_button
-        size_hint: .15, .12
-        pos: 60,50
-        background_color: 0,0,0,0
 
-        on_press: root.backPress()
-        on_release:
-            app.root.current = "main"
-            root.manager.transition.direction = "right"
-            root.backOff()
-        Image:
-            id: backButton_image
-            source: 'assets/back.png'
-            center_x: self.parent.center_x
-            center_y: self.parent.center_y
+        # canvas:
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: 'assets/petsroom.jpeg'
+                
+
+
+        Button:
+            id: back_button
+            size_hint: .15, .12
+            pos: 60,50
+            background_color: 0,0,0,0
+
+            on_press: root.backPress()
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+                root.backOff()
+            Image:
+                id: backButton_image
+                source: 'assets/back.png'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y

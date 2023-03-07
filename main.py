@@ -10,13 +10,24 @@ from kivy.lang import Builder
 from kivy.clock import Clock
 from dbfunctions import authenticate, set_interval,check_drink_time
 from hydropetsSM import main_store, first_time_toggle_action
-
+from kivy.uix.relativelayout import RelativeLayout
 from kivy.properties import (
-    NumericProperty, ReferenceListProperty, ObjectProperty, StringProperty
+    NumericProperty, ReferenceListProperty, ObjectProperty, StringProperty, ListProperty
 )
+Config.set('graphics', 'width', 340)
+Config.write()
 
-Window.size = (360, 640)
-Config.set('graphics', 'resizable', False)
+class Bounds(RelativeLayout):
+    pass
+
+
+class Background(Image):
+    offset = ListProperty()
+    magnification = NumericProperty(0)
+    
+class PlantRoomBackground(Image):
+    offset = ListProperty()
+    magnification = NumericProperty(0)
 
 #hydropetsSM functions
 def bye_mapper(state,widget):
@@ -54,11 +65,12 @@ class PetScreen(Screen):
 class WindowManager(ScreenManager):
     pass
 
-class Plant(Screen):
+class PlantScreen(Screen):
     growth = 0
     stage = 0
     text = StringProperty("0")
     harvest_count = 0
+
 
     def change_image(self):
         self.growth += 1
@@ -70,40 +82,40 @@ class Plant(Screen):
         
         if self.stage == 0:
             # Change the image source
-            self.image.source = 'assets/stage1.webp'
+            self.ids.plant_image.source = 'assets/stage1.webp'
             # Reload the image
-            self.image.reload()
+            self.ids.plant_image.reload()
 
         if self.stage == 1:
             # Change the image source
-            self.image.source = 'assets/stage2.webp'
+            self.ids.plant_image.source = 'assets/stage2.webp'
             # Reload the image
-            self.image.reload()
+            self.ids.plant_image.reload()
 
         if self.stage == 2:
             # Change the image source
-            self.image.source = 'assets/stage3.webp'
+            self.ids.plant_image.source = 'assets/stage3.webp'
             # Reload the image
-            self.image.reload()
+            self.ids.plant_image.reload()
 
         if self.stage == 3:
-            self.ids.image.source = 'assets/newHarvest.png'
+            self.ids.hydrate_button.source = 'assets/newHarvest.png'
             
     def press(self):
         if self.stage == 2:
-            self.ids.image.source = 'assets/newHarvest_pressed.png'
+            self.ids.hydrate_button.source = 'assets/newHarvest_pressed.png'
             self.growth = -1
             self.stage = 0  
             self.harvestCounter()
         else:
-            self.ids.image.source = 'assets/newHydrate_pressed.png'
+            self.ids.hydrate_button.source = 'assets/newHydrate_pressed.png'
         self.change_image()
 
     def off(self):
         if self.stage == 2:
-            self.ids.image.source = 'assets/newHarvest.png' 
+            self.ids.hydrate_button.source = 'assets/newHarvest.png' 
         else:
-            self.ids.image.source = 'assets/newHydrate.png'
+            self.ids.hydrate_button.source = 'assets/newHydrate.png'
     
     def harvestCounter(self):
         self.harvest_count += 1
