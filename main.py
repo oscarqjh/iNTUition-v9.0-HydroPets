@@ -7,6 +7,9 @@ from kivy.config import Config
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
+from kivy.clock import Clock
+from dbfunctions import authenticate, set_interval,check_drink_time
+from hydropetsSM import main_store, first_time_toggle_action
 from kivy.uix.relativelayout import RelativeLayout
 from kivy.properties import (
     NumericProperty, ReferenceListProperty, ObjectProperty, StringProperty, ListProperty
@@ -25,6 +28,32 @@ class Background(Image):
 class PlantRoomBackground(Image):
     offset = ListProperty()
     magnification = NumericProperty(0)
+
+#hydropetsSM functions
+def bye_mapper(state,widget):
+    #Maps bye
+    widget.bye = state.get('saying_bye')
+
+def bye_dispatcher(dispatch, widget):
+    #Dispatches bye action
+    return {
+        'bind':{
+            'bye':lambda *largs, **kwargs: dispatch(bye_action)
+        },
+        'init':{
+            'bye':True
+        }
+    }
+
+def ByeFunction(*largs):
+    '''
+        Functional component which returns nothing, changes state
+    '''
+    return
+
+ByeFunction = main_store.connect(bye_mapper, bye_dispatcher, ByeFunction)
+
+####
 
 class PetScreen(Screen):
     def backPress(self):
@@ -102,6 +131,18 @@ class PlantScreen(Screen):
 kv = Builder.load_file('Main.kv')
 
 class MainApp(App):
+    def on_start(self):
+        authenticated = authenticate()
+        #authenticated 0 is not authenticated, 1 is first time, 2 is existing user
+        if authenticated:
+            set_interval(check_drink_time,60)
+            if authenticated==1:
+                pass
+            elif authenticated==2:
+                pass
+        else:
+            pass
+        return super().on_start()
     def build(self):
         return kv
 
